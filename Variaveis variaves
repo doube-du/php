@@ -1,0 +1,21 @@
+/*
+  Variáveis variáveis, em PHP, são variáveis que podem receber nomes dinâmicamente declarados.
+  Um exemplo seria:
+*/
+  <?php 
+    $a = "Hello";
+    $$a = "Word";
+    
+    echo $a." ".$$a; // Irá imprimier Hello Word;
+    echo $a." ".$hello; // Irá imprimir Hello Word, uma vez que a variavel $hello foi definida dinamicamente
+    
+  ?>
+/*
+  É bastante util para manipular dados vindos de Formulários, podendo pegar todos de uma vez.
+  O código é:
+*/
+  <?php 
+    foreach ($_POST as $indice => $valor){ //Para cada post, haverá um indice com seu valor.
+	    $$indice = $valor; //O indice sera o valor ($_POST['nome'] se tornará $nome)
+    }
+  ?>
